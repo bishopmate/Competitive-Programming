@@ -1,3 +1,6 @@
+// Round 617 (Div 3)
+// Problem D. Fight with Monsters 
+// https://codeforces.com/contest/1296/problem/D
 #include<bits/stdc++.h>
 #define speed ios::sync_with_stdio(false); cin.tie(0); cout.tie(0)
 #define ll long long
@@ -38,19 +41,21 @@ int main(){
     ll last_round;
     for(int i = 0; i<monsters; ++i){
         cin>>monsters_hp[i];
-        last_round = monsters_hp%(me_hp+opp_hp);
+        last_round = monsters_hp[i]%(me_hp+opp_hp);
         if(last_round==0){
             monsters_hp[i] = me_hp+opp_hp;
         }else{
             monsters_hp[i] = last_round;
         }
-        no_of_chances[i] = ceil(monsters_hp[i]/me_hp) - 1;
-
+        no_of_chances[i] = (monsters_hp[i]+me_hp-1)/me_hp - 1;
+     //   cout<<no_of_chances[i]<<" ";
     }
+    // cout<<"\n";
     sort(no_of_chances,no_of_chances+monsters);
-    ll i = 0;
     ll points = 0;
-    while((chances-no_of_chances[i])>0){
+    for(int i = 0; i<monsters; ++i){
+        if((chances-no_of_chances[i])<0)
+            break;
         chances = chances - no_of_chances[i];
         ++points;
     }
