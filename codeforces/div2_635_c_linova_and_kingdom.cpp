@@ -1,3 +1,4 @@
+// Link - https://codeforces.com/contest/1337/problem/C
 #include <iostream>
 #include <iomanip>
 #include <cassert>
@@ -74,7 +75,6 @@ void solve(){
     sort(profit.begin()+1, profit.end(),greater<int>());
     ll ans = 0;
     // debug(sizes);debug(depths);debug(profit);
-    // nth_element(profit.begin(), profit.end()+n-k, profit.end(), cmp);
     for(int i=1; i<=k; i++){
         ans += profit[i];
     }
