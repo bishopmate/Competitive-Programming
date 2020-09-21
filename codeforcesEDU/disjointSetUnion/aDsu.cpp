@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 #define int long long
 using namespace std;
-// int rank[100006], parent[100006];  
+ 
 int get(int a, int parent[]){
   return  (parent[a] == a ? a : get(parent[a], parent));
 }
