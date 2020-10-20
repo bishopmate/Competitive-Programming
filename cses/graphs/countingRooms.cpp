@@ -1,12 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 /*
+Sample Input
 5 8
 ########
 #..#...#
 ####.#.#
 #..#...#
 ########
+
+Sample Output
+3
 */
  
 bool isValid(int i, int j, int n, int m){
